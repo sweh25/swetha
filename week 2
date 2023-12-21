@@ -1,17 +1,21 @@
-def weather_prediction():
-    temperature = int(input("Enter temperature:"))
-    windspace = int(input("Enter windspace:"))
-    humidity = int(input("Enter humidity:"))
-    result = 0.5*temperature*temperature - 0.2*humidity + 0.1*windspace - 15
-    if result>300:
-        print("weather is sunny")
-    elif 200<result<=300:
-        print("weather is cloudy")
-    elif 100<result<=200:
-        print("weather is rainy")
-    elif result<=100:
-        print("weather is stromy")
+def weather_prediction(temperature, windspace, humidity):
+    result = 0.5 * temperature * temperature - 0.2 * humidity + 0.1 * windspace - 15
+    if result > 300:
+        return "weather is sunny"
+    elif 200 < result <= 300:
+        return "weather is cloudy"
+    elif 100 < result <= 200:
+        return "weather is rainy"
+    elif result <= 100:
+        return "weather is stormy"
     else:
-        print("Enter correct inputs")
+        return "Enter correct inputs"
 
-weather_prediction()
+
+# Example usage:
+temperature_input = int(input("Enter temperature: "))
+windspace_input = int(input("Enter windspace: "))
+humidity_input = int(input("Enter humidity: "))
+
+result_message = weather_prediction(temperature_input, windspace_input, humidity_input)
+print(result_message)
